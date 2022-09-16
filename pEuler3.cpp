@@ -23,7 +23,7 @@ int main(){
         
         for (unsigned long long int i = 2; i < N; i++){
 
-            if (esPrimo(i) && N%1 == 0)
+            if (esPrimo(i) && N%i == 0)
 
                 masGrande = i;
         }
