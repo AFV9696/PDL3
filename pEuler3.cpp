@@ -1,51 +1,16 @@
-/*
-
-The prime factors of 13195 are 5, 7, 13 and 29.
-
-What is the largest prime factor of the number 600851475143 ?
-
-*/
-
-
 #include <iostream>
 
 using namespace std;
+int main()
+{
+    unsigned long long x = 600851475143;
 
-bool esPrimo (unsigned long long int n);
-
-
-int main(){
-
+    for (unsigned long long factor = 2; factor * factor <= x; factor++)
     
-    const unsigned long long N = 600851475143;
-          unsigned long long int masGrande;
+      while (x % factor == 0 && x != factor)
+        x /= factor;
 
-        
-        for (unsigned long long int i = 2; i < N; i++){
+    cout << x << endl;
 
-            if (esPrimo(i) && N%i == 0)
-
-                masGrande = i;
-        }
-
-    cout << masGrande;
-
-    return 0;
-        
-
-    }
-    
-    
-    
-    bool esPrimo(unsigned long long int n){ 
-
-            unsigned long long int i = 2;
-            
-
-        while (n > i && n % i != 0)
-
-            i++;
-
-        return i >= n;
-
-    }
+  return 0;
+}
